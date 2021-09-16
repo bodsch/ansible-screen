@@ -5,36 +5,12 @@ screen_autodetach: true
 
 screen_multiuser: true
 
-screen_bind: []
-  # - key: '='
-  #   command: resize =
-  # - key: '+'
-  #   command: resize +1
-  # - key: '-'
-  #   command: resize -1
-  # - key: '_'
-  #   command: resize max
-  # - key: c
-  #   command: screen 1
-  # - key: 0
-  #   command: select 10
-  # - key: ','
-  #   command: prev
-  # - key: '.'
-  #   command: next
-  # # vim like navigation
-  # - key: "j"
-  #   description: Ctl-a j goes down
-  #   command: focus down
-  # - key: "k"
-  #   description: Ctl-a k goes up
-  #   command: focus up
-  # - key: "l"
-  #   description: Ctl-a l goes right
-  #   command: focus right
-  # - key: "h"
-  #   description: Ctl-a h goes left
-  #   command: focus left
+screen_bind:
+  # Remove some stupid / dangerous key bindings
+  - key: "^k"
+    command: ""
+  - key: '^\'
+    command: ""
 
 screen_bindkey:
   # make life easier, f1-f10 selects screens 0-9
@@ -44,22 +20,6 @@ screen_bindkey:
   - key: "k2"
     description: binds F2  to select screen 2
     command: select 2
-  # - key: "k3"
-  #   command: select 3
-  # - key: "k4"
-  #   command: select 4
-  # - key: "k5"
-  #   command: select 5
-  # - key: "k6"
-  #   command: select 6
-  # - key: "k7"
-  #   command: select 7
-  # - key: "k8"
-  #   command: select 8
-  # - key: "k9"
-  #   command: select 9
-  # - key: "k0"
-  #   command: select 0
   - key: "k7"
     description: bind F7  to detach screen session from this terminal
     command: detach
@@ -72,10 +32,10 @@ screen_bindkey:
   - key: "k;"
     description: bind F10 to rename current screen window
     command: title
-  - key: "^[Od"
+  - key: '"^[Od"'
     description: change window with ctrl-left
     command: prev
-  - key: "^[Oc"
+  - key: '"^[Oc"'
     description: change window with ctrl-right
     command: next
 
@@ -86,12 +46,9 @@ screen_hardstatus: false
 screen_hardstatus_line: 'alwayslastline "%-Lw%{= rW} %50>%2n%f * %t %{-}%+Lw%<  %= "'
 
 screen_screens:
-  - options: ""
+  - options: "-t bash"
     number: 1
     command: bash
-#   - options: "-t bash"
-#     number: 2
-#     command: bash
 
 screen_defscrollback: 10240
 screen_defutf8: true
