@@ -1,0 +1,12 @@
+---
+
+- name: create screen configuration
+  become: true
+  template:
+    src: "screenrc.j2"
+    dest: "{{ screen_conf_file }}"
+    owner: "root"
+    group: "root"
+    mode: 0644
+
+...

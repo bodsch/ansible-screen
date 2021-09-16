@@ -1,0 +1,8 @@
+---
+
+- name: install screen
+  package:
+    name: screen
+    state: present
+
+...

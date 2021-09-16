@@ -1,0 +1,62 @@
+# {{ ansible_managed }}
+#
+
+termcapinfo rxvt-unicode ti@:te@     # enable SHIFT-PGUP / SHIFT-PGDOWN scroll
+# termcapinfo wy* CS=\E[?1h:CE=\E[?1l:vi=\E[?25l:ve=\E[?25h:VR=\E[?5h:VN=\E[?5l:cb=\E[1K:CD=\E[1J
+terminfo rxvt-unicode ti@:te@:
+term screen-256color
+
+{% if screen_caption %}
+caption {{ screen_caption_line }}
+{% endif %}
+
+hardstatus {{ screen_hardstatus | ternary('on', 'off') }}
+hardstatus {{ screen_hardstatus_line }}
+
+activity "Activity in %t(%n)"
+
+# multiuser  {{ screen_multiuser | ternary('on', 'off') }}
+
+{% if screen_bind is defined and
+      screen_bind | count > 0 %}
+{% for bind in screen_bind %}
+bind {{ bind.key }} {{ bind.command }} {% if bind.description is defined %} # {{ bind.description }} {% endif %}
+
+{% endfor %}
+{% endif %}
+
+{% if screen_bindkey is defined and
+      screen_bindkey | count > 0 %}
+{% for bind in screen_bindkey %}
+bindkey -k {{ bind.key }} {{ bind.command }} {% if bind.description is defined %} # {{ bind.description }} {% endif %}
+
+{% endfor %}
+{% endif %}
+
+# Fix for residual editor text
+altscreen on
+
+# Fix for Name column in windowlist only show "bash"
+# windowlist string "%4n %h%=%f"
+
+{% if screen_screens is defined and
+      screen_screens | count > 0 %}
+{% for screen in screen_screens %}
+screen {{ screen.options }} {{ screen.number }} {{ screen.command }}
+{% endfor %}
+select 0
+{% endif %}
+
+shell -$SHELL
+
+defnonblock 2
+defscrollback {{ screen_defscrollback }}
+defutf8 {{ screen_defutf8 | ternary('on', 'off') }}
+
+startup_message {{ screen_startup_message | ternary('on', 'off') }}
+autodetach {{ screen_autodetach | ternary('on', 'off') }}
+
+utf8 {{ screen_utf8 | ternary('on', 'off') }}
+verbose {{ screen_verbose | ternary('on', 'off') }}
+wrap {{ screen_wrap | ternary('on', 'off') }}
+zombie_timeout {{ screen_zombie_timeout }}
