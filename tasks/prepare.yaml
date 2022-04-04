@@ -19,7 +19,7 @@
         gpgcheck: 1
         enabled: 1
   when:
-    - ansible_os_family | lower == 'redhat'
+    - ansible_os_family | lower in ['redhat', 'rocky']
 
 - name: update package cache
   package:
