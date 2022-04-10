@@ -20,11 +20,15 @@ None
 
 Tested on
 
-* Debian 9 / 10
-* Ubuntu 18.04 / 18.10 / 19.10
-* CentOS 7 / 8
-* Oracle Linux 8
-* Arch Linux
+* ArchLinux
+* ArtixLinux
+* Debian based
+    - Debian 10 / 11
+    - Ubuntu 20.04
+* RedHat based
+    - Alma Linux 8
+    - Rocky Linux 8
+    - OracleLinux 8
 
 ## usage
 
