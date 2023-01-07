@@ -2,7 +2,7 @@
 
 - name: create screen configuration
   become: true
-  template:
+  ansible.builtin.template:
     src: "screenrc.j2"
     dest: "{{ screen_conf_file }}"
     owner: "root"

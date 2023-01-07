@@ -4,13 +4,17 @@
 Ansible role to install and configure `screen`
 
 
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/bodsch/ansible-screen/main.yml?branch=main)][ci]
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/bodsch/ansible-screen/CI)][ci]
 [![GitHub issues](https://img.shields.io/github/issues/bodsch/ansible-screen)][issues]
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/bodsch/ansible-screen)][releases]
+[![Ansible Quality Score](https://img.shields.io/ansible/quality/50067?label=role%20quality)][quality]
 
 [ci]: https://github.com/bodsch/ansible-screen/actions
 [issues]: https://github.com/bodsch/ansible-screen/issues?q=is%3Aopen+is%3Aissue
 [releases]: https://github.com/bodsch/ansible-screen/releases
+[quality]: https://galaxy.ansible.com/bodsch/screen
+
 
 ## Requirements & Dependencies
 
@@ -198,3 +202,16 @@ focus up
 layout attach one
 layout select one
 ```
+
+
+---
+
+## Author and License
+
+- Bodo Schulz
+
+## License
+
+[Apache](LICENSE)
+
+`FREE SOFTWARE, HELL YEAH!`
