@@ -5,7 +5,6 @@ Ansible role to install and configure `screen`
 
 
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/bodsch/ansible-screen/main.yml?branch=main)][ci]
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/bodsch/ansible-screen/CI)][ci]
 [![GitHub issues](https://img.shields.io/github/issues/bodsch/ansible-screen)][issues]
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/bodsch/ansible-screen)][releases]
 [![Ansible Quality Score](https://img.shields.io/ansible/quality/50067?label=role%20quality)][quality]
