@@ -3,3 +3,5 @@
 skip_list:
   - name[casing]
   - name[template]
+  - role-name
+
