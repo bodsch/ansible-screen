@@ -15,6 +15,9 @@ hardstatus {{ screen_hardstatus_line }}
 
 activity "Activity in %t(%n)"
 
+# define a bigger scrollback, default is 100 lines
+defscrollback 2048
+
 # multiuser  {{ screen_multiuser | ternary('on', 'off') }}
 
 {% if screen_bind is defined and

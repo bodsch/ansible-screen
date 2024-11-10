@@ -2,6 +2,7 @@
 
 galaxy_info:
   role_name: screen
+  namespace: bodsch
 
   author: Bodo Schulz
   description: installs, configures screen
